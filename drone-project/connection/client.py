@@ -11,7 +11,8 @@ camera.start_preview()
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     #while True:
-    for b in range(4000):
+    for b in range(1):
+        print("taking and sending...")
         camera.capture('test.jpg')
         #os.system("sed 's/\x0//g' test1.jpg > test.jpg")
         """with open('test.jpg','rb') as t:
@@ -33,9 +34,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             b = bytearray(f)
             #for i in range(len(b)):
             #    print(b[i])
-            s.sendall(b)
+            #s.sendall(b)
             print(b)
-        print("reciving")
+        print("Done!")
         print(len(b))
         #data = s.recv(5000)
         #with open('gotback.jpg', 'wb') as r:
