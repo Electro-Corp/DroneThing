@@ -5,14 +5,44 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #define PORT 8080
+int serverfd, serversocket, valread;
+struct sockaddr_in address;
+int opt = 1;
+int addrlen = sizeof(address);
+char buffer[1024] = { 0 };
+char* test = "Test";
+
+//function decleration
+void setupSocket(void);
 int main(int argc, char const* argv[]){
-	int serverfd, serversocket, valread;
-	struct sockaddr_int address;
-	int opt = 1;
-	int addrlen = sizeof(address);
-	char buffer[1024] = { 0 };
-	char* test = "Test";
+
+	setupSocket();
+	
 	
 	
 	return 0;
+}
+void setupSocket(){
+	if ((serverfd = socket(AF_INET, SOCK_STREAM, 0) == 0)){
+		perror("Connection Failed. :( ");
+		exit(EXIT_FAILURE);	
+	}else{
+		printf("Socket file descriptor Sucesss!\n");	
+	}
+	serverfd = socket(AF_INET, SOCK_STREAM, 0);
+	//force to port 8080
+	if(setsockopt(serverfd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))){
+		perror("Set socket port fail!");
+		exit(EXIT_FAILURE);	
+	}
+	setsockopt(serverfd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt));
+	address.sin_family = AF_INET;
+	address.sin_addr.s_addr = INADDR_ANY;
+	address.sin_port = htons(PORT);
+	
+	bind(serverfd,(struct sockaddr*)&address, sizeof(address));
+	if(bind(serverfd,(struct sockaddr*)&address, sizeof(address)) < 0){
+		perror("Bind fail!");
+		exit(EXIT_FAILURE);	
+	}
 }
