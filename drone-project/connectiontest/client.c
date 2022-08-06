@@ -31,5 +31,7 @@ int main(){
 		perror("connect fail"); exit(EXIT_FAILURE);	
 	}
 	send(sock,test,strlen(test),0);
+	close(clientfd);
+	return 0;
 	
 }
