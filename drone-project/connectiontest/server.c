@@ -21,7 +21,7 @@ int main(int argc, char const* argv[]){
 	readdata();
 	
 	close(serversocket);
-	shutdown(serverfd, SHUT,RDWR);
+	shutdown(serverfd, SHUT_RDWR);
 	return 0;
 }
 void setupSocket(){
