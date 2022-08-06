@@ -14,12 +14,14 @@ char* test = "Test";
 
 //function decleration
 void setupSocket(void);
+void readdata(void);
 int main(int argc, char const* argv[]){
 
 	setupSocket();
+	readdata();
 	
-	
-	
+	close(serversocket);
+	shutdown(serverfd, SHUT,RDWR);
 	return 0;
 }
 void setupSocket(){
@@ -40,9 +42,20 @@ void setupSocket(){
 	address.sin_addr.s_addr = INADDR_ANY;
 	address.sin_port = htons(PORT);
 	
-	bind(serverfd,(struct sockaddr*)&address, sizeof(address));
+	//bind(serverfd,(struct sockaddr*)&address, sizeof(address));
 	if(bind(serverfd,(struct sockaddr*)&address, sizeof(address)) < 0){
 		perror("Bind fail!");
 		exit(EXIT_FAILURE);	
 	}
+	if(listen(serverfd,3) <0){
+		perror("listen fail"); exit(EXIT_FAILURE);
+	}
+	if((serversocket = accept(serverfd,(struct sockaddr*)&address, (socklen_t*)&addrlen))<0){
+		perror("accept fail"); exit(EXIT_FAILURE);	
+	}
+	
+}
+void readdata(){
+	valread = read(serversocket,buffer,1024);
+	printf("%s\n",buffer);
 }
