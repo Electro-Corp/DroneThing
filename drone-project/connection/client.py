@@ -1,49 +1,42 @@
 import socket
 import os
 import numpy as np
+import time
+print("Client")
 from picamera import PiCamera
-HOST = '192.168.86.35'
-PORT = 8080
+try:
+    import cv2
+except:
+    print("CV2 Load failure, not a problem *if* you have a PiCam. If you dont, sad")
+    if(str(input("Would you like to install it now? (y/n)")) == "y"):
+        os.system("pip3 install opencv-contrib-python")
 
-camera = PiCamera()
-camera.resolution = (1024,720)
-camera.start_preview()
+HOST = '192.168.86.35'
+print("Connecting to: "+HOST)
+PORT = 8080
+try:
+    camera = PiCamera()
+    camera.resolution = (1024,720)
+    camera.start_preview()
+except:
+    cam = cv2.VideoCapture(0)
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     #while True:
-    for b in range(1):
+    for b in range(2):
         print("taking and sending...")
-        camera.capture('test.jpg')
-        #os.system("sed 's/\x0//g' test1.jpg > test.jpg")
-        """with open('test.jpg','rb') as t:
-            #print(t.readlines())
-            print("Reading..")
-            b = t.readlines()
-            for i in range(len(b)): print(b[i])
-            #b.remove("x00")
-            #b[:] = [x for x in b if x != 0x00]
-            print("Array")
-            a = np.array(b)
-            print("sendng...")
-            #result = bytearray([int(x,0) for x in b])
-            s.sendall(bytes(result)) #a.tobytes())
-            input("")
-            print(a.tobytes())"""
+        try:
+            camera.capture('test.jpg')
+        except:
+            ret, image = cam.read()
+            
+            cv2.imwrite('/home/segfault/DroneThing/drone-project/connection/test.jpg',image)
+            
         with open('test.jpg',"rb") as image:
             f = image.read()
             b = bytearray(f)
-            #for i in range(len(b)):
-            #    print(b[i])
-            #s.sendall(b)
-            print(b)
+            s.sendall(b)
         print("Done!")
         print(len(b))
-        #data = s.recv(5000)
-        #with open('gotback.jpg', 'wb') as r:
-        #    r.write(data)
-        #print("Data",repr(data))
-    #while True:
-    #    camera.capture('test.jpg')
-    #    s.sendall(b'REAL????')
-	#    data = s.recv(1024)
-	#    print('Received', repr(data))
+        time.sleep(0.4)
+cam.release()
