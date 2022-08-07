@@ -9,7 +9,7 @@ try:
 except:
     print("CV2 Load failure, not a problem *if* you have a PiCam. If you dont, sad")
     if(str(input("Would you like to install it now? (y/n)")) == "y"):
-        os.system("pip3 install opencv-contrib-python")
+        os.system("pip3 install opencv-python")
 
 HOST = '192.168.86.35'
 print("Connecting to: "+HOST)
