@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
@@ -46,6 +47,8 @@ public:
     QLabel *label_2;
     QLineEdit *checkpoint_path;
     QCommandLinkButton *commandLinkButton;
+    QSpinBox *e_time;
+    QLabel *EpochsEpochs_label;
     QGroupBox *groupBox_4;
     QCommandLinkButton *test_model;
     QTextBrowser *output;
@@ -102,6 +105,12 @@ public:
         commandLinkButton = new QCommandLinkButton(groupBox);
         commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
         commandLinkButton->setGeometry(QRect(20, 100, 201, 41));
+        e_time = new QSpinBox(groupBox);
+        e_time->setObjectName(QStringLiteral("e_time"));
+        e_time->setGeometry(QRect(80, 130, 48, 26));
+        EpochsEpochs_label = new QLabel(groupBox);
+        EpochsEpochs_label->setObjectName(QStringLiteral("EpochsEpochs_label"));
+        EpochsEpochs_label->setGeometry(QRect(20, 140, 91, 17));
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(270, 100, 201, 111));
@@ -145,6 +154,7 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "Checkpoint paths: ", Q_NULLPTR));
         checkpoint_path->setText(QApplication::translate("MainWindow", "/home/%USERNAME", Q_NULLPTR));
         commandLinkButton->setText(QApplication::translate("MainWindow", "Train model based on data", Q_NULLPTR));
+        EpochsEpochs_label->setText(QApplication::translate("MainWindow", "Epochs:", Q_NULLPTR));
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Test model", Q_NULLPTR));
         test_model->setText(QApplication::translate("MainWindow", "Test Model", Q_NULLPTR));
     } // retranslateUi

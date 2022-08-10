@@ -12,7 +12,7 @@
 #include <iostream>
 /*
  * PYTHON MAIN.pY ARGS
- * python3 main.py iscustom istraining model_path checkpoint_path database_path minist
+ * python3 main.py iscustom istraining model_path checkpoint_path database_path minist Epochs
  *
  */
 
@@ -42,7 +42,7 @@ std::string exec(const char* cmd) {
     return result;
 }
 
-void MainWindow::runMainpy(int iscustom, int istraining, std::string model_path_for, std::string checkpoint_path, int minist){
+void MainWindow::runMainpy(int iscustom, int istraining, std::string model_path_for, std::string checkpoint_path, int minist, int Epochs){
     ui->output->setText("Please wait.. running command..");
     std::string finalcommand = "python3 ~/DroneTHing/drone-project/TensorFlowGUISystem/tensorflow_engine/main.py ";
     finalcommand = finalcommand + std::to_string(iscustom) + " ";
@@ -50,6 +50,7 @@ void MainWindow::runMainpy(int iscustom, int istraining, std::string model_path_
     finalcommand = finalcommand + model_path_for+ " ";
     finalcommand = finalcommand + checkpoint_path + " ";
     finalcommand = finalcommand + std::to_string(minist) + " ";
+    finalcommand = finalcommand + std::to_string(Epochs) + " ";
     std::cout<<"EXECUTING.."<<std::endl;
     std::cout<<finalcommand << std::endl;
     //std::system(finalcommand.c_str());
@@ -58,7 +59,7 @@ void MainWindow::runMainpy(int iscustom, int istraining, std::string model_path_
 }
 void MainWindow::on_test_model_clicked()
 {
-    runMainpy(ui->radioButton_2->isChecked(),1,model_path,ui->checkpoint_path->text().toStdString(),ui->radioButton->isChecked());
+    //runMainpy(ui->radioButton_2->isChecked(),1,model_path,ui->checkpoint_path->text().toStdString(),ui->radioButton->isChecked());
 
 }
 
@@ -73,5 +74,5 @@ void MainWindow::on_load_model_button_clicked()
 
 void MainWindow::on_commandLinkButton_clicked()
 {
-    runMainpy(ui->radioButton_2->isChecked(),1,ui->saved_model_path->text().toStdString(),ui->checkpoint_path->text().toStdString(),ui->radioButton->isChecked());
+    runMainpy(ui->radioButton_2->isChecked(),1,ui->saved_model_path->text().toStdString(),ui->checkpoint_path->text().toStdString(),ui->radioButton->isChecked(),ui->e_time->value());
 }

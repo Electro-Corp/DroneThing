@@ -17,10 +17,12 @@ model_path = sys.argv[3]
 check_point_path = sys.argv[4]
 #database_path = sys.argv[5]
 minist = sys.argv[5]
+epoch = sys.argv[6]
 print("IS CUSTOM: "+str(custom))
 print("IS TRAINING: "+str(train))
 print("IS MINIST: "+str(minist))
 #exit()
+epoch = int(epoch)
 if(int(custom) == 0):
 	
 	if(int(minist) == 1):
@@ -37,6 +39,8 @@ if(int(custom) == 0):
 else:
 	print("Choose an option! Jeez...")
 batch_size = 32
+if(int(epoch) == 0):
+	epoch = 10
 if(int(train) == 1):
 	model = utils.create_model()
 	model.summary()
@@ -44,7 +48,7 @@ if(int(train) == 1):
 	checkpoint_dir = os.path.dirname(checkpoint_path)
 	cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,save_weights_only=True,verbose=1,save_freq=5*batch_size)
 
-	model.fit(train_images, train_labels,  epochs=50,batch_size=batch_size ,validation_data=(test_images, test_labels), callbacks=[cp_callback]) 
+	model.fit(train_images, train_labels,  epochs=epoch,batch_size=batch_size ,validation_data=(test_images, test_labels), callbacks=[cp_callback]) 
 
 	test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
 

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[12];
-    char stringdata0[168];
+    QByteArrayData data[13];
+    char stringdata0[175];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,14 +41,15 @@ QT_MOC_LITERAL(6, 64, 11), // "std::string"
 QT_MOC_LITERAL(7, 76, 10), // "model_path"
 QT_MOC_LITERAL(8, 87, 15), // "checkpoint_path"
 QT_MOC_LITERAL(9, 103, 6), // "minist"
-QT_MOC_LITERAL(10, 110, 28), // "on_load_model_button_clicked"
-QT_MOC_LITERAL(11, 139, 28) // "on_commandLinkButton_clicked"
+QT_MOC_LITERAL(10, 110, 6), // "Epochs"
+QT_MOC_LITERAL(11, 117, 28), // "on_load_model_button_clicked"
+QT_MOC_LITERAL(12, 146, 28) // "on_commandLinkButton_clicked"
 
     },
     "MainWindow\0on_test_model_clicked\0\0"
     "runMainpy\0iscustom\0istraining\0std::string\0"
     "model_path\0checkpoint_path\0minist\0"
-    "on_load_model_button_clicked\0"
+    "Epochs\0on_load_model_button_clicked\0"
     "on_commandLinkButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -68,13 +69,13 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    0,   34,    2, 0x08 /* Private */,
-       3,    5,   35,    2, 0x08 /* Private */,
-      10,    0,   46,    2, 0x08 /* Private */,
-      11,    0,   47,    2, 0x08 /* Private */,
+       3,    6,   35,    2, 0x08 /* Private */,
+      11,    0,   48,    2, 0x08 /* Private */,
+      12,    0,   49,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, 0x80000000 | 6, 0x80000000 | 6, QMetaType::Int,    4,    5,    7,    8,    9,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, 0x80000000 | 6, 0x80000000 | 6, QMetaType::Int, QMetaType::Int,    4,    5,    7,    8,    9,   10,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -88,7 +89,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_test_model_clicked(); break;
-        case 1: _t->runMainpy((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 1: _t->runMainpy((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< std::string(*)>(_a[3])),(*reinterpret_cast< std::string(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< int(*)>(_a[6]))); break;
         case 2: _t->on_load_model_button_clicked(); break;
         case 3: _t->on_commandLinkButton_clicked(); break;
         default: ;

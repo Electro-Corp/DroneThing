@@ -23,7 +23,7 @@ private slots:
      * python3 main.py iscustom istraining model_path checkpoint_path
      *
      */
-    void runMainpy(int iscustom, int istraining, std::string model_path, std::string checkpoint_path, int minist);
+    void runMainpy(int iscustom, int istraining, std::string model_path, std::string checkpoint_path, int minist, int Epochs);
     void on_load_model_button_clicked();
 
     void on_commandLinkButton_clicked();
