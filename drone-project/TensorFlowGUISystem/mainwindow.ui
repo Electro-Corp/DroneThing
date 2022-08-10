@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1287</width>
+    <height>836</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CT Tensorflow model Manager</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>801</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;Tensorflow models Manage GUI &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="load_model_group">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>241</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Load Model</string>
+    </property>
+    <widget class="QLabel" name="loaded_model_path">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>221</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QCommandLinkButton" name="load_model_button">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>70</y>
+       <width>177</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load model</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>541</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Train Model</string>
+    </property>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>241</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Use MINIST Fashion Database</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>221</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Use custom</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>30</y>
+       <width>281</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Custom</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>511</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>All</string>
+     </property>
+     <widget class="QLabel" name="Saved_model_path_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Saved Model path: </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="saved_model_path">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>30</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/home/$USERNAME/</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Checkpoint paths: </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="checkpoint_path">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>70</y>
+        <width>271</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/home/%USERNAME</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCommandLinkButton" name="commandLinkButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Train model based on data</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>100</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Test model</string>
+    </property>
+    <widget class="QCommandLinkButton" name="test_model">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>177</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Test Model</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTextBrowser" name="output">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>20</y>
+      <width>681</width>
+      <height>751</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1287</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

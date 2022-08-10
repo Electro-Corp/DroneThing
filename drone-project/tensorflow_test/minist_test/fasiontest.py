@@ -3,7 +3,10 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from tensorflow import keras
+from tensorflow.keras.models import load_model
 print(tf.__version__)
+shouldloadmodel = 1
 def create_model():
 	model = tf.keras.Sequential([
 		tf.keras.layers.Flatten(input_shape=(28,28)),
@@ -12,8 +15,8 @@ def create_model():
 	])
 	model.compile(optimizer='adam',loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),metrics=['accuracy'])	
 	return model
-def load_model(path):
-	model = tf.keras.load_model(path)
+def loadmodel(path):
+	model = load_model(path)
 	return model
 # load data set
 fashion_mnist = tf.keras.datasets.fashion_mnist
@@ -30,7 +33,19 @@ test_images = test_images /255.0
 batch_size = 32
 
 #create model
-
+if(shouldloadmodel == 1):
+	try:
+		print("Loading model...")
+		model = loadmodel('saved_model/fashion')
+		print("Done..")
+		model.summary()
+		test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
+		print("\n Loaded model Trained Test Accur:",test_acc)
+		exit()
+	except OSError:
+		print("ERROR")
+		exit()
+		
 model = create_model()
 model.summary()
 
@@ -52,7 +67,7 @@ model.save('saved_model/fashion')
 #untrained
 untrainedmodel = create_model()
 un_test_loss, un_test_acc = untrainedmodel.evaluate(test_images, test_labels, verbose=2)
-print("\n Trained Test Accur:",un_test_acc)
+print("\n Untrained Test Accur:",un_test_acc)
 #predictions
 probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
 predictions = probability_model.predict(test_images)

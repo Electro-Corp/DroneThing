@@ -3,36 +3,38 @@
 #include <iostream>
 #include <thread>
 #include <string>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsPixmapItem>
 
+QGraphicsScene *m_graphicsScene;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    m_graphicsScene = new QGraphicsScene(this);
+    ui->graphicsView->setScene(m_graphicsScene);
 
 
     ui->setupUi(this);
     std::string path = "test";
-//    std::cout<<"Creating Thread.."<<std::endl;
-//    std::thread imageThread(&MainWindow::refresh_image_thread,this);
-//    this_thread::sleep_for(2s);
-//    std::cout<<"Waited.."<<std::endl;
+    refresh_image_thread();
 
-
-//    imageThread.join();
-//    std::cout<<"Joined Thread.."<<std::endl;
 
 }
 
 MainWindow::~MainWindow()
 {
+
     delete ui;
 }
 void MainWindow::refresh_image_thread(void){
-    std::cout<<"Thread is here"<<std::endl;
-    while (true){
-
-        ui->label->setText(QString::fromStdString("bruh"));
-    }
+    m_graphicsScene->clear();
+    QImage image("../connection/images/recived15.jpg");
+    QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+    item->setPos(0,0);
+    item->setScale(1);
+    m_graphicsScene->addItem(item);
 
 }
