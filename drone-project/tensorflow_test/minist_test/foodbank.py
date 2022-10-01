@@ -4,7 +4,12 @@ import PIL
 import PIL.Image
 import tensorflow as tf
 import matplotlib.pyplot as plt
-
+from tensorflow.keras.models import load_model
+train = False
+if(train):
+	print("Training")
+else:
+	print("Train mode off, loading model instead")
 #import tensorflow_datasets as tfds
 print(tf.__version__)
 import pathlib
@@ -56,7 +61,7 @@ def create_model():
 ])
 	model.compile(optimizer='adam',loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),metrics=['accuracy'])	
 	return model
-def loadmodel(path):
+def loadmodelfrompath(path):
 	model = load_model(path)
 	return model
 model = create_model()
@@ -67,16 +72,17 @@ checkpoint_path = "foodbank/cp.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
 cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,save_weights_only=True,verbose=1,save_freq=5*batch_size)
 
-
-model.fit(train_ds,  epochs=50,batch_size=batch_size ,validation_data=val_ds, callbacks=[cp_callback]) 
-
+if(train):
+	model.fit(train_ds,  epochs=100,batch_size=batch_size ,validation_data=val_ds, callbacks=[cp_callback]) 
+else:
+	model = loadmodelfrompath("saved_model/foodbank")
 test_loss, test_acc = model.evaluate(train_ds, verbose=2)
 
 #model.load_weights(checkpoint_path)
 test_loss, test_acc = model.evaluate(train_ds, verbose=2)
 print("\n Trained Test Accur:",test_acc)
-
-model.save('saved_model/foodbank')
+if(train):
+	model.save('saved_model/foodbank')
 model.summary()
 
 probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
