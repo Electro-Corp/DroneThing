@@ -1,9 +1,15 @@
+/*
+ * TENSORFLOW GUI
+ * A program to simplify training and
+ * testing AI models created with
+ * Tensorflow.
+ */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 //QT
 #include <QFileDialog>
-
-//C++
+#include <QMessageBox>
+// C++
 #include <cstdlib>
 #include <memory>
 #include <stdexcept>
@@ -11,9 +17,8 @@
 #include <array>
 #include <iostream>
 /*
- * PYTHON MAIN.pY ARGS
+ * PYTHON MAIN.py ARGS
  * python3 main.py iscustom istraining model_path checkpoint_path database_path minist Epochs
- *
  */
 
 std::string model_path;
@@ -43,7 +48,7 @@ std::string exec(const char* cmd) {
 }
 
 void MainWindow::runMainpy(int iscustom, int istraining, std::string model_path_for, std::string checkpoint_path, int minist, int Epochs){
-    ui->output->setText("Please wait.. running command..");
+
     std::string finalcommand = "python3 ~/DroneTHing/drone-project/TensorFlowGUISystem/tensorflow_engine/main.py ";
     finalcommand = finalcommand + std::to_string(iscustom) + " ";
     finalcommand = finalcommand + std::to_string(istraining)+ " ";
@@ -74,5 +79,9 @@ void MainWindow::on_load_model_button_clicked()
 
 void MainWindow::on_commandLinkButton_clicked()
 {
+    ui->output->setText("Please wait.. running command..");
+    QMessageBox msgBox;
+    msgBox.setText("You are about to train. This is a very resource intensive task, and you will see this application freeze while it is training. Press 'OK' to continue...");
+    msgBox.exec();
     runMainpy(ui->radioButton_2->isChecked(),1,ui->saved_model_path->text().toStdString(),ui->checkpoint_path->text().toStdString(),ui->radioButton->isChecked(),ui->e_time->value());
 }

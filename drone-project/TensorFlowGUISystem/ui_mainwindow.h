@@ -65,7 +65,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 30, 801, 51));
+        label->setGeometry(QRect(10, 30, 511, 51));
         load_model_group = new QGroupBox(centralWidget);
         load_model_group->setObjectName(QStringLiteral("load_model_group"));
         load_model_group->setGeometry(QRect(10, 90, 241, 121));
@@ -107,10 +107,10 @@ public:
         commandLinkButton->setGeometry(QRect(20, 100, 201, 41));
         e_time = new QSpinBox(groupBox);
         e_time->setObjectName(QStringLiteral("e_time"));
-        e_time->setGeometry(QRect(80, 130, 48, 26));
+        e_time->setGeometry(QRect(70, 140, 48, 31));
         EpochsEpochs_label = new QLabel(groupBox);
         EpochsEpochs_label->setObjectName(QStringLiteral("EpochsEpochs_label"));
-        EpochsEpochs_label->setGeometry(QRect(20, 140, 91, 17));
+        EpochsEpochs_label->setGeometry(QRect(10, 140, 91, 31));
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setGeometry(QRect(270, 100, 201, 111));
@@ -152,7 +152,7 @@ public:
         Saved_model_path_label->setText(QApplication::translate("MainWindow", "Saved Model path: ", Q_NULLPTR));
         saved_model_path->setText(QApplication::translate("MainWindow", "/home/$USERNAME/", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "Checkpoint paths: ", Q_NULLPTR));
-        checkpoint_path->setText(QApplication::translate("MainWindow", "/home/%USERNAME", Q_NULLPTR));
+        checkpoint_path->setText(QApplication::translate("MainWindow", "/home/$USERNAME", Q_NULLPTR));
         commandLinkButton->setText(QApplication::translate("MainWindow", "Train model based on data", Q_NULLPTR));
         EpochsEpochs_label->setText(QApplication::translate("MainWindow", "Epochs:", Q_NULLPTR));
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Test model", Q_NULLPTR));

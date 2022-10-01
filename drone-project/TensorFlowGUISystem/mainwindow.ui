@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>801</width>
+      <width>511</width>
       <height>51</height>
      </rect>
     </property>
@@ -178,7 +178,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>/home/%USERNAME</string>
+       <string>/home/$USERNAME</string>
       </property>
      </widget>
     </widget>
@@ -198,20 +198,20 @@
     <widget class="QSpinBox" name="e_time">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>130</y>
+       <x>70</x>
+       <y>140</y>
        <width>48</width>
-       <height>26</height>
+       <height>31</height>
       </rect>
      </property>
     </widget>
     <widget class="QLabel" name="EpochsEpochs_label">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>10</x>
        <y>140</y>
        <width>91</width>
-       <height>17</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">

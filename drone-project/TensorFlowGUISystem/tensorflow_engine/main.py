@@ -1,3 +1,11 @@
+#
+# TENSORFLOW GUI PYTHON BACKEND
+# A program to simplify training and
+# testing AI models created with
+# Tensorflow.
+# ------------ main.py -----------
+# This file is the backend for the GUI that runs 
+# and trains the model.
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
