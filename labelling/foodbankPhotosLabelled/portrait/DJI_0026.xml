@@ -1,0 +1,62 @@
+<annotation>
+	<folder>portrait</folder>
+	<filename>DJI_0026.jpg</filename>
+	<path>/home/jetbot/foodbankPhotos/portrait/DJI_0026.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>full pellet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>388</xmin>
+			<ymin>140</ymin>
+			<xmax>1564</xmax>
+			<ymax>1848</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>full pellet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1644</xmin>
+			<ymin>136</ymin>
+			<xmax>2836</xmax>
+			<ymax>1852</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>full pellet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>400</xmin>
+			<ymin>1964</ymin>
+			<xmax>1472</xmax>
+			<ymax>3392</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>full pellet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1552</xmin>
+			<ymin>1920</ymin>
+			<xmax>2680</xmax>
+			<ymax>3380</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,38 @@
+<annotation>
+	<folder>landscape</folder>
+	<filename>DJI_0005.jpg</filename>
+	<path>/home/jetbot/foodbankPhotos/landscape/DJI_0005.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>full pellet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1892</xmin>
+			<ymin>2112</ymin>
+			<xmax>3360</xmax>
+			<ymax>2573</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>empty</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>833</xmin>
+			<ymin>2082</ymin>
+			<xmax>1828</xmax>
+			<ymax>2550</ymax>
+		</bndbox>
+	</object>
+</annotation>
