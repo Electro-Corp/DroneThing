@@ -1,7 +1,7 @@
 <annotation>
 	<folder>landscape</folder>
 	<filename>DJI_0003.jpg</filename>
-	<path>/home/jetbot/foodbankPhotos/landscape/DJI_0003.jpg</path>
+	<path>/home/jetbot/labelling/foodbankPhotos/landscape/DJI_0003.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -14,12 +14,12 @@
 	<object>
 		<name>full pellet</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>575</xmin>
-			<ymin>1082</ymin>
-			<xmax>3022</xmax>
+			<xmin>478</xmin>
+			<ymin>1</ymin>
+			<xmax>3033</xmax>
 			<ymax>1638</ymax>
 		</bndbox>
 	</object>
