@@ -1,7 +1,7 @@
 <annotation>
 	<folder>landscape</folder>
 	<filename>DJI_0009.jpg</filename>
-	<path>/home/jetbot/foodbankPhotos/landscape/DJI_0009.jpg</path>
+	<path>/home/jetbot/labelling/foodbankPhotos/landscape/DJI_0009.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,8 +18,8 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>233</xmin>
-			<ymin>2291</ymin>
-			<xmax>2004</xmax>
+			<ymin>1641</ymin>
+			<xmax>2013</xmax>
 			<ymax>2888</ymax>
 		</bndbox>
 	</object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>2057</xmin>
-			<ymin>2270</ymin>
-			<xmax>3933</xmax>
-			<ymax>2950</ymax>
+			<xmin>2248</xmin>
+			<ymin>847</ymin>
+			<xmax>3960</xmax>
+			<ymax>2859</ymax>
 		</bndbox>
 	</object>
 </annotation>
